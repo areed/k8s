@@ -1,0 +1,10 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: app-ingress
+spec:
+  tls:
+    - secretName: app-keys
+  backend:
+    serviceName: app
+    servicePort: 80
