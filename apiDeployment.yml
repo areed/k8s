@@ -1,0 +1,38 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: api
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: retraced
+        tier: api
+    spec:
+      containers:
+        - name: api
+          image: quay.io/retracedhq/api:92361cc
+          volumeMounts:
+            - name: config
+              mountPath: /retraced-api/config
+              readOnly: true
+          ports:
+            - containerPort: 3000
+          env:
+            - name: NODE_ENV
+              valueFrom:
+                secretKeyRef:
+                  name: api-env
+                  key: node_env
+            - name: SEGMENT_WRITE_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: api-env
+                  key: segment_write_key
+      imagePullSecrets:
+        - name: quayio
+      volumes:
+        - name: config
+          secret:
+            secretName: api-config
