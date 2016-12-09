@@ -13,4 +13,3 @@ spec:
   selector:
     app: retraced
     tier: app
----
