@@ -13,6 +13,7 @@ spec:
       containers:
         - name: processor
           image: quay.io/retracedhq/processor:22aa837
+          env:
             - name: POSTGRES_USER
               valueFrom:
                 secretKeyRef:
