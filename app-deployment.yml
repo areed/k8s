@@ -11,7 +11,7 @@ spec:
         tier: app
     spec:
       containers:
-        - name: api
+        - name: app
           image: quay.io/retracedhq/app:158f566-stg
           ports:
             - containerPort: 80
