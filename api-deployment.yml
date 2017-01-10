@@ -101,5 +101,15 @@ spec:
                 secretKeyRef:
                   name: disque
                   key: DISQUE_NODES
+            - name: AUTH0_CLIENT_DOMAIN
+              valueFrom:
+                secretKeyRef:
+                  name: auth0
+                  key: AUTH0_CLIENT_DOMAIN
+            - name: AUTH0_CLIENT_ID
+              valueFrom:
+                secretKeyRef:
+                  name: auth0
+                  key: AUTH0_CLIENT_ID
       imagePullSecrets:
         - name: quayio
