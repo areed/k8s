@@ -12,7 +12,7 @@ spec:
     spec:
       containers:
         - name: www
-          image: quay.io/retracedhq/www:7fc7ff6-stg
+          image: quay.io/retracedhq/www:f793010-stg
           ports:
             - name: main
               containerPort: 8099
