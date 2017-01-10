@@ -15,6 +15,6 @@ spec:
           image: quay.io/retracedhq/www:7fc7ff6-stg
           ports:
             - name: main
-              containerPort: 23450
+              containerPort: 8099
       imagePullSecrets:
         - name: quayio
