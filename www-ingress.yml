@@ -1,0 +1,10 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: www-ingress  
+spec:
+  tls:
+    - secretName: www-keys
+  backend:
+    serviceName: www
+    servicePort: 12340
