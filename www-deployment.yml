@@ -1,0 +1,20 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: www
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: retraced
+        tier: www
+    spec:
+      containers:
+        - name: www
+          image: quay.io/retracedhq/www:7fc7ff6-stg
+          ports:
+            - name: main
+              containerPort: 23450
+      imagePullSecrets:
+        - name: quayio
