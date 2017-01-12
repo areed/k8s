@@ -12,7 +12,7 @@ spec:
     spec:
       containers:
         - name: app
-          image: quay.io/retracedhq/app:8af3d65-stg
+          image: quay.io/retracedhq/app:78bcea9-stg
           ports:
             - containerPort: 80
       imagePullSecrets:
