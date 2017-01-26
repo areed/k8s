@@ -12,10 +12,15 @@ spec:
     spec:
       containers:
         - name: api
-          image: quay.io/retracedhq/api:29006f6
+          image: quay.io/retracedhq/api:ba995ce
           ports:
             - containerPort: 3000
           env:
+            - name: REDIS_URI
+              valueFrom:
+                secretKeyRef:
+                  name: redis
+                  key: REDIS_URI
             - name: POSTGRES_USER
               valueFrom:
                 secretKeyRef:
@@ -96,5 +101,20 @@ spec:
                 secretKeyRef:
                   name: disque
                   key: DISQUE_NODES
+            - name: AUTH0_CLIENT_DOMAIN
+              valueFrom:
+                secretKeyRef:
+                  name: auth0
+                  key: AUTH0_CLIENT_DOMAIN
+            - name: AUTH0_CLIENT_ID
+              valueFrom:
+                secretKeyRef:
+                  name: auth0
+                  key: AUTH0_CLIENT_ID
+            - name: RETRACED_PUBLIC_SITE
+              valueFrom:
+                secretKeyRef:
+                  name: retraced
+                  key: RETRACED_PUBLIC_SITE
       imagePullSecrets:
         - name: quayio

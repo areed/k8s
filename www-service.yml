@@ -1,16 +1,16 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: app
+  name: www
   labels:
     app: retraced
-    tier: app
+    tier: www
 spec:
   type: NodePort
   ports:
   - name: svcmain
-    port: 80
-    targetPort: 80
+    port: 12340
+    targetPort: main
   selector:
     app: retraced
-    tier: app
+    tier: www
