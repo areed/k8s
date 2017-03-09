@@ -1,0 +1,49 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: tls-refresher
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: retraced
+        tier: tls-refresher
+    spec:
+      imagePullSecrets:
+        - name: quayio
+      volumes:
+        - name: fs-secrets
+          secret:
+            secretName: tls-refresher
+            items:
+              - key: KUBE_CONFIG
+                path: kube-config
+      containers:
+        - name: tls-refresher
+          image: quay.io/retracedhq/tls_refresher:0123456
+          volumeMounts:
+            - name: fs-secrets
+              mountPath: /opt/tls_refresher/secrets
+              readOnly: true
+          env:
+            - name: AWS_REGION
+              valueFrom:
+                secretKeyRef:
+                  name: tls-refresher
+                  key: AWS_REGION
+            - name: AWS_ACCESS_KEY_ID
+              valueFrom:
+                secretKeyRef:
+                  name: tls-refresher
+                  key: AWS_ACCESS_KEY_ID
+            - name: AWS_SECRET_ACCESS_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: tls-refresher
+                  key: AWS_SECRET_ACCESS_KEY
+            - name: VAULT_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: tls-refresher
+                  key: VAULT_TOKEN
