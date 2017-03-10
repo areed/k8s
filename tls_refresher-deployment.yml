@@ -42,8 +42,3 @@ spec:
                 secretKeyRef:
                   name: tls-refresher
                   key: AWS_SECRET_ACCESS_KEY
-            - name: VAULT_TOKEN
-              valueFrom:
-                secretKeyRef:
-                  name: tls-refresher
-                  key: VAULT_TOKEN
