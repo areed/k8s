@@ -21,7 +21,7 @@ spec:
                 path: domains.txt
       containers:
         - name: tls-refresher
-          image: quay.io/retracedhq/tls_refresher:77940f1
+          image: quay.io/retracedhq/tls_refresher:67781ea
           volumeMounts:
             - name: fs-secrets
               mountPath: /opt/tls_refresher/secrets
