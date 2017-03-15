@@ -17,8 +17,8 @@ spec:
           secret:
             secretName: tls-refresher
             items:
-              - key: KUBE_CONFIG
-                path: kube-config
+              - key: DOMAINS_TXT
+                path: domains.txt
       containers:
         - name: tls-refresher
           image: quay.io/retracedhq/tls_refresher:0123456
