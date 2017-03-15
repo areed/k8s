@@ -6,7 +6,7 @@ metadata:
     kubernetes.io/ingress.allow-http: "false"
 spec:
   tls:
-    - secretName: www-keys
+    - secretName: preview-tls
   backend:
     serviceName: www
     servicePort: 12340
