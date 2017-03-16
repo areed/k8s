@@ -10,9 +10,11 @@ spec:
         app: retraced
         tier: api
     spec:
+      imagePullSecrets:
+        - name: quayio
       containers:
         - name: api
-          image: quay.io/retracedhq/api:fa2973c
+          image: quay.io/retracedhq/api:07cdfa0
           ports:
             - containerPort: 3000
           env:
@@ -116,5 +118,3 @@ spec:
                 secretKeyRef:
                   name: retraced
                   key: RETRACED_PUBLIC_SITE
-      imagePullSecrets:
-        - name: quayio
