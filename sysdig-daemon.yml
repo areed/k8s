@@ -42,7 +42,9 @@ spec:
           valueFrom:
               secretKeyRef:
                   name: sysdig
-                  key: access-key
+                  key: access_key
+        - name: ADDITIONAL_CONF                                  
+          value: "machine_id_prefix: retraced-"
         volumeMounts:
         - mountPath: /host/var/run/docker.sock
           name: docker-sock
