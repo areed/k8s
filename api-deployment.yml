@@ -14,7 +14,7 @@ spec:
         - name: quayio
       containers:
         - name: api
-          image: quay.io/retracedhq/api:07cdfa0
+          image: quay.io/retracedhq/api:a14cb16
           ports:
             - containerPort: 3000
           env:
@@ -118,3 +118,8 @@ spec:
                 secretKeyRef:
                   name: retraced
                   key: RETRACED_PUBLIC_SITE
+            - name: STATUSPAGEIO_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: statuspageio
+                  key: token
