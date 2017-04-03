@@ -12,7 +12,7 @@ spec:
     spec:
       containers:
         - name: processor
-          image: quay.io/retracedhq/processor:6b544ef
+          image: quay.io/retracedhq/processor:4173d33
           env:
             - name: POSTGRES_USER
               valueFrom:
