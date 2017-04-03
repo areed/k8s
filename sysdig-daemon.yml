@@ -43,6 +43,11 @@ spec:
               secretKeyRef:
                   name: sysdig
                   key: access_key
+        - name: TAGS                                  
+          valueFrom:
+              secretKeyRef:
+                  name: sysdig-tags
+                  key: tags
         - name: ADDITIONAL_CONF                                  
           value: "machine_id_prefix: retraced-"
         volumeMounts:
