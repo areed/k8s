@@ -12,7 +12,7 @@ spec:
     spec:
       containers:
         - name: logs
-          image: quay.io/retracedhq/logs:b69d3fd-stg
+          image: quay.io/retracedhq/logs:943124f-stg
           ports:
             - containerPort: 80
       imagePullSecrets:
