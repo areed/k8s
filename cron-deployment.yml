@@ -12,7 +12,7 @@ spec:
     spec:
       containers:
         - name: processor
-          image: quay.io/retracedhq/processor:6b544ef
+          image: quay.io/retracedhq/processor:e4550b2
           command: ["./bin/processor"]
           args: ["cron"]
           env:

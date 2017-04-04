@@ -14,7 +14,7 @@ spec:
         - name: quayio
       containers:
         - name: api
-          image: quay.io/retracedhq/api:07d1ed8
+          image: quay.io/retracedhq/api:2494646
           ports:
             - containerPort: 3000
           env:
