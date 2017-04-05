@@ -51,5 +51,10 @@ spec:
                 secretKeyRef:
                   name: disque
                   key: DISQUE_NODES
+            - name: MANDRILL_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: mandrill
+                  key: MANDRILL_KEY
       imagePullSecrets:
         - name: quayio
